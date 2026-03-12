@@ -1,7 +1,7 @@
 import { useFavorites } from "@/src/features/favorites/hooks/useFavorites";
 import { Carousel } from "@/src/shared/components/Carousel";
 import { useNavigation } from "@react-navigation/native";
-import { Search } from "lucide-react-native";
+import { PlusCircle, Search } from "lucide-react-native";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useGetHandbags } from "../hooks/useGetHandbags";
@@ -48,10 +48,17 @@ export const Index = () => {
     <SafeAreaView className="flex-1 bg-white">
 
       {/* Header */}
-      <View className="z-30 bg-background/95 border-b border-border px-4 py-3">
+      <View className="z-30 bg-background/95 border-b border-border px-4 py-3 relative">
         <Text className="font-display text-3xl font-bold text-center text-foreground mb-3">
           ❀ Luxe Atelier ❀
         </Text>
+        
+        <TouchableOpacity 
+          className="absolute top-4 right-4"
+          onPress={() => navigation.navigate('AddProduct' as never)}
+        >
+          <PlusCircle size={28} color="#3A2E2A" />
+        </TouchableOpacity>
 
         <TouchableOpacity
           activeOpacity={0.7}

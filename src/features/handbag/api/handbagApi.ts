@@ -12,3 +12,11 @@ export const getHandbagById = async (id: string) => {
     url: `/handbags/${id}`,
   });
 };
+
+export const createHandbag = async (handbag: Omit<Handbag, "id">) => {
+  return request<Handbag>({
+    url: "/handbags",
+    method: "POST",
+    data: handbag,
+  });
+};

@@ -1,5 +1,6 @@
 import FavoritesScreen from "@/src/features/favorites/screens/FavoritesScreen";
 import { Index } from "@/src/features/handbag/components/Index";
+import AddProductScreen from "@/src/features/handbag/screens/AddProductScreen";
 import ProductDetailScreen from "@/src/features/handbag/screens/ProductDetailScreen";
 import SearchScreen from "@/src/features/search/screens/SearchScreen";
 import { BottomNav } from "@/src/shared/components/BottomNav";
@@ -13,6 +14,7 @@ export type TabParamList = {
   Search: undefined;
   Favorites: undefined;
   NotFound: undefined;
+  AddProduct: undefined;
 }
 
 const Tab = createBottomTabNavigator<TabParamList>();
@@ -29,6 +31,7 @@ export default function BottomTabNavigator() {
       <Tab.Screen name="Search" component={SearchScreen} options={{ title: 'Search', headerShown: false, tabBarButton: () => null }} />
       <Tab.Screen name="ProductDetail" component={ProductDetailScreen} options={{ title: 'Product Detail', headerShown: false, tabBarButton: () => null }} />
       <Tab.Screen name="Favorites" component={FavoritesScreen} options={{ title: 'Favorites', headerShown: false, tabBarIcon: ({ color, size }) => <Heart color={color} size={size} /> }} />
+      <Tab.Screen name="AddProduct" component={AddProductScreen} options={{ title: 'Add Product', headerShown: false, tabBarButton: () => null }} />
       <Tab.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Not Found', headerShown: false, tabBarButton: () => null }} />
     </Tab.Navigator>
   )
