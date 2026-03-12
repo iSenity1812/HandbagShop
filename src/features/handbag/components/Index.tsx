@@ -69,11 +69,11 @@ export const Index = () => {
         numColumns={2}
         columnWrapperStyle={{ justifyContent: 'space-between', paddingHorizontal: 16 }}
         ListHeaderComponent={renderHeader}
-        contentContainerStyle={{ paddingBottom: 100, paddingTop: 20 }}
+        contentContainerStyle={{ paddingBottom: 50, paddingTop: 20 }}
         renderItem={({ item }) => (
           <View style={{
             width: "48%",
-            marginBottom: 16,
+            marginBottom: 10,
             borderRadius: 12,
             backgroundColor: "white",
             overflow: "hidden",

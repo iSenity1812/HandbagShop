@@ -105,7 +105,7 @@ export function Carousel({ items }: CarouselProps) {
                 <Text className="text-xl font-display text-white mb-2">{item.handbagName}</Text>
                 {item.percentOff > 0 && (
                   <View className="bg-rose-500 self-start mt-1 px-2 py-0.5 rounded-sm">
-                    <Text className="text-white text-[10px] font-body">{item.percentOff}% OFF</Text>
+                    <Text className="text-white text-[10px] font-body">{Math.round(item.percentOff * 100)}% OFF</Text>
                   </View>
                 )}
               </LinearGradient>

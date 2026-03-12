@@ -12,7 +12,7 @@ export function BottomNav({ state, navigation }: BottomTabBarProps) {
   );
 
   return (
-    <View className="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex-row">
+    <View className="absolute h-[60px] bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex-row">
       {visibleTabs.map((route) => {
         const routeIndex = state.routes.findIndex((r) => r.key === route.key);
         const active = state.index === routeIndex;

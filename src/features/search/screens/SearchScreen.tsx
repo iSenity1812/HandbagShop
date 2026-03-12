@@ -1,6 +1,6 @@
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { ArrowLeft, ArrowUpDown, SlidersHorizontal } from "lucide-react-native";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { FlatList, Pressable, Text, TextInput, View } from "react-native";
 
 import { useFavorites } from "@/src/features/favorites/hooks/useFavorites";
@@ -22,6 +22,16 @@ export default function SearchScreen() {
   const [showFilter, setShowFilter] = useState(false);
 
   const filtered = useSearchProducts(query, sort, filters);
+
+  useFocusEffect(
+    useCallback(() => {
+      return () => {
+        setQuery("");
+        setSort("none");
+        setFilters(defaultFilters);
+      };
+    }, [])
+  );
 
   return (
     <View className="flex-1 mt-6 bg-[#FAF5F0]">

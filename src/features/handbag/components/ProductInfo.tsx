@@ -4,7 +4,7 @@ import { Text, View } from "react-native";
 import { Handbag } from "../types/handbag";
 
 export function ProductInfo({ product }: { product: Handbag }) {
-  const discountedPrice = product.cost * (1 - (product.percentOff || 0) / 100);
+  const discountedPrice = product.cost * (1 - (product.percentOff || 0) / 1);
 
   return (
     <View className="px-4 py-2 pb-16 bg-[#FAF5F0] flex-1">
@@ -28,7 +28,7 @@ export function ProductInfo({ product }: { product: Handbag }) {
             </Text>
             <View className="bg-[#A45A63]/80 px-2 py-1 rounded-full">
               <Text className="text-white text-xs font-bold px-1">
-                {product.percentOff}% OFF
+                {Math.round(product.percentOff * 100)}% OFF
               </Text>
             </View>
           </>

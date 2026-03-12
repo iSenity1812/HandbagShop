@@ -29,7 +29,7 @@ export function ProductCard({
   onToggleFavorite,
 }: ProductCardProps) {
   const navigation = useNavigation<NavigationProp>();
-  const discountedPrice = product.cost * (1 - product.percentOff / 100);
+  const discountedPrice = product.cost * (1 - product.percentOff / 1);
 
   return (
     <MotiView
@@ -54,7 +54,7 @@ export function ProductCard({
           {product.percentOff > 0 && (
             <View className="absolute top-3 left-3 px-2 py-1 rounded" style={{ backgroundColor: "rgba(180,91,99,0.9)" }}>
               <Text className="text-white text-xs font-body font-bold tracking-wider">
-                {product.percentOff}% OFF
+                {Math.round(product.percentOff * 100)}% OFF
               </Text>
             </View>
           )}
