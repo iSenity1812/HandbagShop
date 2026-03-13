@@ -23,7 +23,7 @@ export function ProductHeader({ product }: any) {
         <ArrowLeft size={22} />
       </Pressable>
 
-      <Text numberOfLines={1} style={{ fontWeight: "600", flex: 1, textAlign: "center" }}>
+      <Text numberOfLines={1} style={{ fontWeight: "600", flex: 1, textAlign: "center", fontFamily: "Alice_400Regular", fontSize: 14 }}>
         {product.handbagName}
       </Text>
 

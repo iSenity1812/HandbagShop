@@ -1,4 +1,3 @@
-import { StarRating } from "@/src/shared/components/StarRating";
 import React from "react";
 import { Text, View } from "react-native";
 import { Handbag } from "../types/handbag";
@@ -35,12 +34,6 @@ export function ProductInfo({ product }: { product: Handbag }) {
         )}
       </View>
 
-      {/* Ratings */}
-      <View className="flex-row items-center mb-6">
-        <StarRating rating={4} />
-        <Text className="text-sm text-gray-500 ml-2 font-body">(1 review)</Text>
-      </View>
-
       {/* Details Card */}
       <View className="bg-white rounded-xl border border-dashed border-gray-300 p-4 mb-6">
         <Text className="font-bold text-[#3A2E2A] mb-2 font-body text-base">
@@ -60,26 +53,6 @@ export function ProductInfo({ product }: { product: Handbag }) {
         </View>
         <Text className="text-gray-500 font-body">
           For: <Text className="text-gray-800">{product.gender ? "Women" : "Unisex"}</Text>
-        </Text>
-      </View>
-
-      {/* Customer Feedback */}
-      <Text className="text-center font-display text-lg text-[#3A2E2A] mb-4">
-        Customer Feedback
-      </Text>
-
-      <View className="flex-row mb-2">
-        <StarRating rating={4} />
-        <Text className="text-sm text-gray-500 ml-1 font-body" style={{ transform: [{ translateY: -5 }] }}>
-          (1)
-        </Text>
-      </View>
-      <View className="bg-white rounded-xl border border-dashed border-gray-300 p-4 mb-8">
-        <Text className="text-gray-600 font-body italic mb-2">
-          &quot;The perfect evening companion. So elegant!&quot;
-        </Text>
-        <Text className="text-gray-400 font-body text-xs">
-          — Isabella R., Dec 1, 2025
         </Text>
       </View>
     </View>

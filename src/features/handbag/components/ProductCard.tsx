@@ -66,7 +66,7 @@ export function ProductCard({
             {product.brand}
           </Text>
 
-          <Text className="text-base font-display text-foreground mb-2">
+          <Text className="text-base font-display text-foreground mb-2" numberOfLines={1}>
             {product.handbagName}
           </Text>
 

@@ -4,6 +4,7 @@ import { ScrollView, Text, View } from "react-native";
 import { ProductHeader } from "../components/ProductHeader";
 import { ProductImage } from "../components/ProductImage";
 import { ProductInfo } from "../components/ProductInfo";
+import { ReviewSection } from "../components/ReviewSection";
 import { useGetHandbagById } from "../hooks/useGetHandbagById";
 ;
 
@@ -44,7 +45,7 @@ export default function ProductDetailScreen() {
 
         <ProductInfo product={product} />
 
-        {/* <ReviewSection productId={product.id} /> */}
+        <ReviewSection productId={product.id} />
       </ScrollView>
     </View>
   );
